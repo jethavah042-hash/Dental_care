@@ -28,6 +28,7 @@ const rateLimit = require("express-rate-limit");
 // ─── Route Imports ────────────────────────────────────────────────────────────
 const healthRoute = require("./routes/healthRoute");
 const authRoute   = require("./routes/authRoute");
+const dentistRoute = require("./routes/dentistRoute");
 
 // ─── Middleware Imports ───────────────────────────────────────────────────────
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
@@ -84,7 +85,7 @@ app.use("/api/auth", authRoute);
 // Future routes will be added here (Phase 3 onwards):
 // app.use("/api/users", userRoute);
 // app.use("/api/patients", patientRoute);
-// app.use("/api/dentists", dentistRoute);
+app.use("/api/dentists", dentistRoute);
 // app.use("/api/appointments", appointmentRoute);
 // ... and more
 
